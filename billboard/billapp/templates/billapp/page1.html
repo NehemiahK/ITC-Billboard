@@ -1,0 +1,52 @@
+{% load static %}
+<html>
+<head>
+    <script src="{% static 'js/index.js' %}"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link href="{% static 'css/index.css' %}" rel="stylesheet" type="text/css">
+
+    <title>Billboard</title>
+</head>
+<body>
+    <div class="header">Billboard</div>
+    {% for message in post_list %}
+    <div class="message">
+
+            <span class="date">12/3/2015</span>
+            <p class="title">{{ message.title }}</p>
+            <p class="content">{{ message.text }}</p>
+            <p class="signature">{{ message.author }}</p>
+
+
+
+        </div>
+            {% endfor %}
+        <div class="adder">
+            <button onclick="revealMessage()" class="sign"><i class="fas fa-plus"></i></button>
+        </div>
+
+        <div class="newMessage">
+            <div class="date">12/3/2015</div>
+
+            <!-- path is billapp/new_post -->
+            <form role="form" method='post' action="/billapp/new_post">
+                {% csrf_token %}
+
+
+                <p class="titleArea">{{ form.title}}</p>
+                <p class="messageArea">{{ form.text}}</p>
+                <p class="authorArea">{{ form.author}}</p>
+
+
+
+        </div>
+
+        <div class="confirmer">
+            <button class='closer' onclick='hideMessage()'><i class="fas fa-times"></i></button>
+            <button class='checker' type='submit'><i class="fas fa-check"></i></button>
+            </form>
+        </div>
+
+    </body>
+    </html>

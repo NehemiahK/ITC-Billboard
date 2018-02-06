@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css?family=Anton');
+@import url('https://fonts.googleapis.com/css?family=Pinyon+Script');
+@import url('https://fonts.googleapis.com/css?family=Poiret+One');
+
+body{
+    display: flex;
+    flex-direction: column;
+}
+.header{
+    font-size: 40px;
+    font-family: 'Anton', sans-serif;
+    text-align: center;
+}
+.date{
+    position: absolute;
+    margin-top: -35px;
+    background-color: white;
+    padding: 5px;
+    font-family: 'Poiret One', cursive;
+    font-size: 16px;
+}
+
+.title{
+    font-family: 'Anton', sans-serif;
+    font-size: 30px;
+    color:#00b7ef;
+}
+
+.content{
+    font-family: Arial;
+    font-size: 16px;
+    color: #c1bfc0;
+}
+.signature{
+    text-align: right;
+    font-family: 'Pinyon Script', cursive;
+    font-size: 24px;
+}
+
+.message{
+    position: relative;
+    padding: 20px;
+    margin-bottom: 50px;
+    border: 3px solid #00b7ef;
+    max-width: 800px;
+    width: 800px;
+    align-self: center;
+}
+.adder{
+    margin-top: 20px;
+    align-self: center;
+    border: 1px dashed black;
+    width:800px;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+.sign{
+    font-size: 16px;
+    background-color: #66CDAA;
+    color:white;
+    border-radius: 3px;
+    cursor: pointer;
+    width:80px;
+    height:30px;
+}
+
+.newMessage{
+    display: none;
+    /*display: flex;*/
+    flex-direction: column;
+    align-self: center;
+    margin-top: 30px;
+    width: 800px;
+    position: relative;
+    padding: 20px;
+    border: 2px dashed #00b7ef;
+}
+.titleArea{
+    margin-left: 15px;
+}
+.messageArea{
+    margin-top: 30px;
+    margin-left: 15px;
+}
+.authorArea{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-right: 15px;
+}
+
+.confirmer{
+    /*display: flex;*/
+    display: none;
+    justify-content: center;
+    align-self: center;
+    flex-direction: row;
+    margin-top: 20px;
+    border: 1px dashed black;
+    width: 800px;
+}
+.closer,.checker{
+    width: 80px;
+    height:30px;
+    align-self: center;
+    margin: 5px;
+    cursor: pointer;
+    color: white;
+    font-size: 16px;
+}
+
+.closer{
+    background-color: red;
+}
+.checker{
+    background-color: #66CDAA;
+}
