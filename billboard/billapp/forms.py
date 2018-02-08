@@ -1,5 +1,7 @@
 from django import forms
 from .models import Post
+
+from django.contrib.auth.models import User # import the user creation from django
 # from django.views.decorators.csrf import csrf_protect
 
 # @csrf_protect
@@ -20,3 +22,8 @@ class PostForm(forms.ModelForm): # the form that is filled out
             'text': forms.Textarea(attrs={'cols':100,'placeholder': 'Enter message here'}),
             'author': forms.TextInput(attrs={'placeholder': 'Author'}),
         }
+
+class UserForm(forms.ModelForm):
+    class Meta:
+        model = User
+        fields = ['username','password']

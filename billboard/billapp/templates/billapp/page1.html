@@ -6,10 +6,26 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link href="{% static 'css/index.css' %}" rel="stylesheet" type="text/css">
 
+    <div>
+    {% if user.is_authenticated %}
+    <div>{{ user.username }}</div>
+    <a href='{% url 'logout_view' %}'>Logout</a>
+
+    {% else %}
+    <div>Anon User</div>
+    <a href='{% url 'login' %}'>Login</a>
+    <a href='{% url 'register' %}'>Register</a>
+    {% endif %}
+
+</div>
+
     <title>Billboard</title>
 </head>
 <body>
+
+
     <div class="header">Billboard</div>
+    <div id='messages'>
     {% for message in post_list %}
     <div class="message">
 
@@ -22,6 +38,7 @@
 
         </div>
             {% endfor %}
+        </div>
         <div class="adder">
             <button onclick="revealMessage()" class="sign"><i class="fas fa-plus"></i></button>
         </div>
@@ -37,9 +54,6 @@
                 <p class="titleArea">{{ form.title}}</p>
                 <p class="messageArea">{{ form.text}}</p>
                 <p class="authorArea">{{ form.author}}</p>
-
-
-
         </div>
 
         <div class="confirmer">
@@ -48,5 +62,8 @@
             </form>
         </div>
 
+
+
     </body>
+
     </html>
